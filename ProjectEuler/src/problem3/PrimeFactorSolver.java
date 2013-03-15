@@ -7,8 +7,14 @@ public class PrimeFactorSolver {
 
 	static Collection<Long> factors = new LinkedList<Long>();
 
+	/**
+	 * Calculates the prime factors of the
+	 * input and stores them in factors.
+	 * E.g. prime factors of 13195 are:
+	 * 5, 7, 13, 29.
+	 */
 	boolean reset;
-	void getPrimeFactors(long input) {
+	public void getPrimeFactors(long input) {
 		if (isPrime(input)) {
 			factors.add(input);
 			return;
@@ -31,7 +37,7 @@ public class PrimeFactorSolver {
 		}
 	}
 
-	long reduce(long number, long factor) {
+	private long reduce(long number, long factor) {
 		if (number % factor == 0) {
 			factors.add(factor);
 			if (isPrime(number /= factor)) {
@@ -43,7 +49,7 @@ public class PrimeFactorSolver {
 		return number;
 	}
 
-	boolean isPrime(long number) {
+	private boolean isPrime(long number) {
 		if (number == 1)
 			return false;
 		if (number % 2 == 0)
@@ -65,12 +71,9 @@ public class PrimeFactorSolver {
 		return true;
 	}
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		PrimeFactorSolver p = new PrimeFactorSolver();
-		p.getPrimeFactors(600851475143l);
+		p.getPrimeFactors(13195l);
 		System.out.println(factors);
 	}
 
