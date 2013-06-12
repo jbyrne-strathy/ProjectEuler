@@ -73,7 +73,7 @@ public class PrimeFactorSolver {
 
 	public static void main(String[] args) {
 		PrimeFactorSolver p = new PrimeFactorSolver();
-		p.getPrimeFactors(13195l);
+		p.getPrimeFactors(600851475143l);
 		System.out.println(factors);
 	}
 

@@ -1,7 +1,7 @@
 package problem1;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Multiples {
 
@@ -16,7 +16,7 @@ public class Multiples {
 	 *
 	 */
 	public static int getSumOfMultiples(final int a, final int b, final int max){
-		List<Integer> list = new LinkedList<Integer>();
+		Set<Integer> list = new HashSet<Integer>();
 		int product = a;
 		for(int i = 2; product < max; i++){
 			list.add(product);
@@ -29,13 +29,14 @@ public class Multiples {
 		}
 		int result = 0;
 		for(int j : list){
+			System.out.println(j);
 			result += j;
 		}
 		return result;
 	}
 
 	public static void main(String[] args) {
-		System.out.println(Multiples.getSumOfMultiples(3, 5, 10));
+		System.out.println(Multiples.getSumOfMultiples(3, 5, 1000));
 	}
 
 }
